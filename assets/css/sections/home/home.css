@@ -739,7 +739,6 @@ Availability Badge
   }
 }
 
-
 /*
 ---------------------------------------------
 SEO Audit Modal
@@ -750,28 +749,8 @@ body.audit-modal-open {
   overflow: hidden;
 }
 
-/*
-The modal is nested inside the animated hero content.
-These rules prevent the hero column, WOW animation,
-and overflow from limiting the fixed modal width.
-*/
-
-body.audit-modal-open .main-banner {
-  overflow: visible !important;
-}
-
-body.audit-modal-open #home .wow,
-body.audit-modal-open #home .hero-content,
-body.audit-modal-open #home .hero-actions {
-  animation: none !important;
-  transform: none !important;
-  filter: none !important;
-  perspective: none !important;
-  contain: none !important;
-}
-
 .audit-modal[hidden] {
-  display: none !important;
+  display: none;
 }
 
 #audit-report-modal,
@@ -786,31 +765,31 @@ Modal Position and Size
 */
 
 #audit-report-modal.audit-modal {
-  position: fixed !important;
+  position: fixed;
 
-  top: 100px !important;
-  left: 50% !important;
-  right: auto !important;
-  bottom: 18px !important;
+  top: 100px;
+  right: 10vw;
+  bottom: 18px;
+  left: 10vw;
 
-  z-index: 999 !important;
+  z-index: 9999;
 
   display: block;
 
-  width: 80vw !important;
-  max-width: 80vw !important;
+  width: auto;
+  min-width: 0;
+  max-width: none;
 
-  height: auto !important;
-  max-height: none !important;
+  height: auto;
+  min-height: 0;
+  max-height: none;
 
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
 
   overflow: hidden;
 
   border-radius: 26px;
-
-  transform: translateX(-50%) !important;
 
   isolation: isolate;
 }
@@ -824,6 +803,7 @@ Modal Backdrop
 #audit-report-modal .audit-modal-backdrop {
   position: absolute;
   inset: 0;
+
   z-index: 0;
 
   width: 100%;
@@ -846,26 +826,29 @@ Modal Dialog
 #audit-report-modal .audit-modal-dialog {
   position: absolute;
   inset: 0;
+
   z-index: 1;
 
-  border: 2px solid var(--seo-blue) !important;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
 
-  width: 100% !important;
-  max-width: none !important;
-
-  height: 100% !important;
-  max-height: none !important;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
 
   padding:
     38px
     clamp(24px, 4vw, 64px)
     34px;
 
-  margin: 0 !important;
+  margin: 0;
 
   overflow-x: hidden;
   overflow-y: auto;
+
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 
   color: var(--seo-text);
 
@@ -892,7 +875,7 @@ Modal Dialog
       #fffdf4 100%
     );
 
-  border: 1px solid rgba(11, 99, 206, 0.17);
+  border: 2px solid var(--seo-blue);
   border-radius: inherit;
 
   box-shadow:
@@ -1019,6 +1002,7 @@ Modal Heading
 #audit-report-modal .audit-modal-label {
   display: inline-flex;
   align-items: center;
+
   gap: 9px;
 
   width: fit-content;
@@ -1059,6 +1043,8 @@ Modal Heading
   font-weight: 800;
   line-height: 1.14;
   letter-spacing: -0.03em;
+
+  overflow-wrap: anywhere;
 }
 
 #audit-report-modal .audit-modal-heading p {
@@ -1167,6 +1153,7 @@ Audit Coverage
 
 #audit-report-modal .audit-modal-scope ul {
   display: grid;
+
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 12px 30px;
@@ -1232,6 +1219,7 @@ Audit Information Note
   margin-top: 4px;
 
   color: #bd9200;
+
   font-size: 15px;
 }
 
@@ -1275,6 +1263,7 @@ Modal Actions
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
+  text-decoration: none;
 
   cursor: pointer;
 
@@ -1289,7 +1278,7 @@ Modal Actions
 #audit-report-modal .audit-modal-report-button {
   gap: 9px;
 
-  color: #ffffff !important;
+  color: #ffffff;
   background: var(--seo-blue);
 
   border: 2px solid var(--seo-blue);
@@ -1299,7 +1288,7 @@ Modal Actions
 
 #audit-report-modal .audit-modal-report-button:hover,
 #audit-report-modal .audit-modal-report-button:focus-visible {
-  color: #ffffff !important;
+  color: #ffffff;
 
   background: var(--seo-red);
   border-color: var(--seo-red);
@@ -1368,21 +1357,15 @@ Animation
 
 /*
 ---------------------------------------------
-Tablet
+Tablet Content
+---------------------------------------------
+
+These rules only modify content inside the modal.
+They do not change the modal's outer position or size.
 ---------------------------------------------
 */
 
 @media (max-width: 1199px) {
-  #audit-report-modal.audit-modal {
-    top: 92px !important;
-    bottom: 14px !important;
-
-    width: 90vw !important;
-    max-width: 90vw !important;
-
-    border-radius: 23px;
-  }
-
   #audit-report-modal .audit-modal-dialog {
     padding: 34px 26px 30px;
   }
@@ -1392,12 +1375,6 @@ Tablet
     right: 20px;
   }
 }
-
-/*
----------------------------------------------
-Tablet Content
----------------------------------------------
-*/
 
 @media (max-width: 991px) {
   #audit-report-modal .audit-modal-heading {
@@ -1419,21 +1396,19 @@ Tablet Content
 
 /*
 ---------------------------------------------
-Mobile
+Mobile Content
+---------------------------------------------
+
+The outer modal still uses:
+
+top: 100px;
+right: 10vw;
+bottom: 18px;
+left: 10vw;
 ---------------------------------------------
 */
 
 @media (max-width: 575px) {
-  #audit-report-modal.audit-modal {
-    top: 82px !important;
-    bottom: 10px !important;
-
-    width: calc(100vw - 20px) !important;
-    max-width: calc(100vw - 20px) !important;
-
-    border-radius: 19px;
-  }
-
   #audit-report-modal .audit-modal-dialog {
     padding: 66px 16px 25px;
   }
@@ -1473,6 +1448,7 @@ Mobile
     grid-template-columns: 1fr;
 
     gap: 10px;
+
     margin-top: 21px;
   }
 
@@ -1482,6 +1458,7 @@ Mobile
 
   #audit-report-modal .audit-modal-detail {
     padding: 15px 16px;
+
     border-radius: 15px;
   }
 
@@ -1521,8 +1498,10 @@ Mobile
 
   #audit-report-modal .audit-modal-actions {
     flex-direction: column;
+    align-items: stretch;
 
     gap: 10px;
+
     margin-top: 20px;
   }
 
@@ -1534,7 +1513,7 @@ Mobile
 
 /*
 ---------------------------------------------
-Extra Small Mobile
+Extra Small Mobile Content
 ---------------------------------------------
 */
 
@@ -1567,13 +1546,13 @@ Reduced Motion
 
 @media (prefers-reduced-motion: reduce) {
   #audit-report-modal .audit-modal-dialog {
-    animation: none !important;
+    animation: none;
   }
 
   #audit-report-modal .audit-modal-close,
   #audit-report-modal .audit-modal-report-button,
   #audit-report-modal .audit-modal-cancel-button {
-    transition: none !important;
+    transition: none;
   }
 }
 
