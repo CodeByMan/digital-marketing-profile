@@ -1,0 +1,17 @@
+/*
+  Modular entry stylesheet.
+  Imports preserve the existing cascade order.
+*/
+
+@import url("core/reset.css");
+@import url("core/global.css");
+@import url("sections/header/header.css");
+@import url("utilities/preloader.css");
+@import url("sections/home/home.css");
+@import url("sections/about/about.css");
+@import url("sections/skills/skills.css");
+@import url("sections/experience/experience.css");
+@import url("sections/education/education.css");
+@import url("sections/certifications/certifications.css");
+@import url("sections/contact/contact.css");
+@import url("sections/footer/footer.css");

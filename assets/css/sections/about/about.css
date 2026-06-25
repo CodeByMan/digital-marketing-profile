@@ -1,0 +1,226 @@
+/*
+---------------------------------------------
+About Section
+---------------------------------------------
+*/
+
+.about-us {
+  position: relative;
+  padding: 82px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 18%, rgba(11, 99, 206, 0.09), transparent 26%),
+    radial-gradient(
+      circle at 92% 82%,
+      rgba(247, 198, 0, 0.09),
+      transparent 24%
+    ),
+    linear-gradient(145deg, #ffffff 0%, #f8fbff 55%, #fffdf7 100%);
+}
+
+.about-us .about-row {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.35fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 72px);
+  width: 100%;
+}
+
+.about-us .about-media,
+.about-us .about-copy {
+  width: 100%;
+  min-width: 0;
+}
+
+/*
+---------------------------------------------
+About Image
+---------------------------------------------
+*/
+
+.about-us .about-image {
+  position: relative;
+  width: 100%;
+  max-width: 352px;
+  margin: 0 auto 0 0;
+  padding: 8px;
+  background: linear-gradient(
+    135deg,
+    var(--seo-blue, #0b63ce),
+    var(--seo-yellow, #f7c600),
+    var(--seo-red, #e53935)
+  );
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(23, 32, 51, 0.15);
+}
+
+.about-us .about-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+  border-radius: 18px;
+}
+
+/*
+---------------------------------------------
+About Content
+---------------------------------------------
+*/
+
+.about-us .about-content {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 0 0 auto;
+  padding: clamp(25px, 3vw, 34px);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(11, 99, 206, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(23, 32, 51, 0.075);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.about-us .about-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  color: var(--seo-red, #e53935);
+  background: rgba(229, 57, 53, 0.07);
+  border: 1px solid rgba(229, 57, 53, 0.13);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-us .about-label i {
+  color: var(--seo-blue, #0b63ce);
+}
+
+.about-us .about-content h2 {
+  margin: 0;
+  color: var(--seo-text, #172033);
+  font-size: clamp(32px, 3.7vw, 49px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.about-us .about-content h2 span {
+  color: var(--seo-blue, #0b63ce);
+}
+
+.about-us .about-content > p {
+  margin: 15px 0 0;
+  color: #59657b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-us .about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.about-us .about-highlights span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 8px 11px;
+  color: var(--seo-blue, #0b63ce);
+  background: #ffffff;
+  border: 1px solid rgba(11, 99, 206, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(23, 32, 51, 0.045);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.about-us .about-highlights i {
+  color: var(--seo-red, #e53935);
+}
+
+/*
+---------------------------------------------
+Responsive About Section
+---------------------------------------------
+*/
+
+@media (max-width: 991px) {
+  .about-us {
+    padding: 69px 0;
+  }
+
+  .about-us .about-row {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    gap: 30px;
+  }
+
+  .about-us .about-image {
+    max-width: 290px;
+  }
+
+  .about-us .about-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-us {
+    padding: 59px 0;
+  }
+
+  .about-us .about-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-us .about-image {
+    max-width: 270px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .about-us .about-content {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .about-us .about-highlights {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-us .about-image {
+    max-width: 245px;
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .about-us .about-image img {
+    border-width: 4px;
+    border-radius: 15px;
+  }
+
+  .about-us .about-content {
+    padding: 23px 19px;
+    border-radius: 21px;
+  }
+
+  .about-us .about-content h2 {
+    font-size: clamp(29px, 8.5vw, 38px);
+  }
+}

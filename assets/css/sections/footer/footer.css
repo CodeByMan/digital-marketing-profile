@@ -1,0 +1,142 @@
+/*
+---------------------------------------------
+Simple Portfolio Footer
+---------------------------------------------
+*/
+
+.portfolio-footer {
+  position: relative;
+  padding: 24px clamp(20px, 5vw, 70px);
+  color: rgba(255, 255, 255, 0.76);
+  background: linear-gradient(135deg, #09182d 0%, #0b2445 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(92%, 1280px);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--seo-blue, #0b63ce),
+    var(--seo-yellow, #f7c600),
+    var(--seo-red, #e53935)
+  );
+  border-radius: 0 0 999px 999px;
+  transform: translateX(-50%);
+}
+
+.portfolio-footer-bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  width: min(100%, 1320px);
+  min-height: 42px;
+  margin: 0 auto;
+  padding-right: 50px;
+}
+
+.portfolio-footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.portfolio-footer-roles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600 !important;
+}
+
+.portfolio-footer-roles span {
+  color: var(--seo-yellow, #f7c600);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.portfolio-footer-credit {
+  text-align: right;
+}
+
+.portfolio-footer-top {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #ffffff !important;
+  background: var(--seo-blue, #0b63ce);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  font-size: 14px;
+  transform: translateY(-50%);
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.portfolio-footer-top:hover,
+.portfolio-footer-top:focus-visible {
+  color: #ffffff !important;
+  background: var(--seo-red, #e53935);
+  transform: translateY(calc(-50% - 2px));
+}
+
+@media (max-width: 767px) {
+  .portfolio-footer {
+    padding: 26px 22px;
+  }
+
+  .portfolio-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .portfolio-footer-credit {
+    text-align: left;
+  }
+}
+
+@media (max-width: 575px) {
+  .portfolio-footer-bottom {
+    padding-right: 46px;
+  }
+
+  .portfolio-footer-bottom p {
+    font-size: 10px;
+  }
+
+  .portfolio-footer-roles {
+    gap: 6px;
+  }
+
+  .portfolio-footer-top {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-footer-top {
+    transition: none;
+  }
+
+  .portfolio-footer-top:hover,
+  .portfolio-footer-top:focus-visible {
+    transform: translateY(-50%);
+  }
+}

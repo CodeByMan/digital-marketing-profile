@@ -1,0 +1,149 @@
+/*
+---------------------------------------------
+Global Styles
+---------------------------------------------
+*/
+
+html,
+body {
+  background: #ffffff;
+  color: var(--seo-text, #172033);
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: clip;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--seo-blue, #0b63ce);
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: var(--seo-blue, #0b63ce);
+}
+
+/*
+---------------------------------------------
+Shared Section Headings
+---------------------------------------------
+*/
+
+.portfolio-section-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 790px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.portfolio-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 9px 17px;
+  color: var(--seo-red, #e53935);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(229, 57, 53, 0.17);
+  border-radius: 999px;
+  box-shadow: 0 9px 24px rgba(23, 32, 51, 0.065);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.portfolio-section-label i {
+  color: var(--seo-blue, #0b63ce);
+  font-size: 12px;
+}
+
+.portfolio-section-heading h2 {
+  margin: 0;
+  color: var(--seo-text, #172033);
+  font-size: clamp(37px, 4.2vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.portfolio-section-heading h2 span {
+  position: relative;
+  display: inline-block;
+  color: var(--seo-blue, #0b63ce);
+}
+
+.portfolio-section-heading h2 span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--seo-yellow, #f7c600),
+    var(--seo-red, #e53935)
+  );
+  border-radius: 999px;
+  transform: scaleX(0.9);
+}
+
+.portfolio-section-heading p {
+  max-width: 680px;
+  margin: 18px auto 0;
+  color: #59657b;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Font Awesome alignment helpers. */
+.resume-button,
+.hero-button {
+  gap: 9px;
+}
+
+.resume-button i,
+.hero-button i,
+.certification-button i,
+.contact-submit i {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 767px) {
+  section[id] {
+    scroll-margin-top: 92px;
+  }
+
+  .portfolio-section-heading {
+    margin-bottom: 34px;
+  }
+
+  .portfolio-section-heading h2 {
+    font-size: clamp(31px, 8vw, 43px);
+  }
+
+  .portfolio-section-heading p {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 575px) {
+  .portfolio-section-label {
+    margin-bottom: 15px;
+    padding: 8px 14px;
+    font-size: 10px;
+  }
+}
